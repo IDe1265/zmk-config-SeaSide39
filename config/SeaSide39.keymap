@@ -18,7 +18,21 @@
 };
 
 / {
-    combos { compatible = "zmk,combos"; };
+    combos {
+        compatible = "zmk,combos";
+
+        lang1 {
+            bindings = <&kp LANGUAGE_2>;
+            key-positions = <13 12>;
+            layers = <0>;
+        };
+
+        lang2 {
+            bindings = <&kp LANGUAGE_1>;
+            key-positions = <18 19>;
+            layers = <0>;
+        };
+    };
 
     macros {
         to_layer_0: to_layer_0 {
@@ -26,6 +40,73 @@
             #binding-cells = <1>;
             bindings = <&to 0 &macro_param_1to1 &kp MACRO_PLACEHOLDER>;
             label = "TO_LAYER_0";
+        };
+
+        bkt_macro: bkt_macro {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp RBKT &kp NUHS &kp LEFT_ARROW>;
+            label = "BKT_MACRO";
+        };
+
+        par_macro: par_macro {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_press>,
+                <&kp LEFT_SHIFT>,
+                <&macro_tap>,
+                <&kp N8 &kp N9>,
+                <&macro_release>,
+                <&kp LEFT_SHIFT>,
+                <&macro_tap>,
+                <&kp LEFT_ARROW>;
+
+            label = "PAR_MACRO";
+        };
+
+        brc_macro: brc_macro {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_press>,
+                <&kp LEFT_SHIFT>,
+                <&macro_tap>,
+                <&kp RIGHT_BRACKET &kp NUHS>,
+                <&macro_release>,
+                <&kp LEFT_SHIFT>,
+                <&macro_tap>,
+                <&kp LEFT_ARROW>;
+
+            label = "BRC_MACRO";
+        };
+
+        interface_shift: interface_shift {
+            compatible = "zmk,behavior-macro-one-param";
+            #binding-cells = <1>;
+            bindings =
+                <&macro_press>,
+                <&kp LEFT_SHIFT>,
+                <&macro_tap>,
+                <&macro_param_1to1 &kp MACRO_PLACEHOLDER>,
+                <&macro_release>,
+                <&kp LEFT_SHIFT>;
+
+            label = "INTERFACE_SHIFT";
+        };
+
+        screen_switching: screen_switching {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_press>,
+                <&kp LEFT_ALT &kp LCTRL>,
+                <&macro_tap>,
+                <&kp TAB>,
+                <&macro_release>,
+                <&kp LEFT_ALT &kp LCTRL>;
+
+            label = "SCREEN_SWITCHING";
         };
     };
 
@@ -37,6 +118,30 @@
 
             #binding-cells = <2>;
             tapping-term-ms = <200>;
+        };
+
+        lbkt_td_behavior: lbkt_td_behavior {
+            compatible = "zmk,behavior-tap-dance";
+            label = "LBKT_TD_BEHAVIOR";
+            #binding-cells = <0>;
+            bindings = <&kp RBKT>, <&kp LS(N8)>;
+        };
+
+        rbkt_td_behavior: rbkt_td_behavior {
+            compatible = "zmk,behavior-tap-dance";
+            label = "RBKT_TD_BEHAVIOR";
+            #binding-cells = <0>;
+            bindings = <&kp NUHS>, <&kp LS(N9)>;
+        };
+
+        layer_interface_shift: layer_interface_shift {
+            compatible = "zmk,behavior-hold-tap";
+            label = "LAYER_INTERFACE_SHIFT";
+            bindings = <&mo>, <&interface_shift>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <170>;
+            flavor = "balanced";
         };
     };
 
