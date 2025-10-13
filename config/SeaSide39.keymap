@@ -1,4 +1,4 @@
- #include <behaviors.dtsi>
+#include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/outputs.h>
@@ -162,10 +162,10 @@
 
         mouse_symbol {
             bindings = <
-&kp LS(LG(S))  &kp LC(TAB)  &screen_switching  &mkp MB5  &bkt_macro                      &interface_shift LS(NUMBER_7)      &interface_shift LS(SEMICOLON)  &kp LS(SQT)              &kp EQUAL                      &kp LEFT_BRACKET
-&mo 4          &mkp MB2     &mkp MB3           &mkp MB1  &par_macro                      &interface_shift LS(NUMBER_2)      &kp SEMICOLON                   &kp SQT                  &interface_shift LS(NUMBER_1)  &layer_interface_shift 4 LS(EQUAL)
-&trans         &trans       &trans             &mkp MB4  &brc_macro                      &interface_shift LS(LEFT_BRACKET)  &interface_shift LS(NUMBER_3)   &interface_shift LS(N5)  &interface_shift LS(NUMBER_4)  &interface_shift LS(NUMBER_6)
-&trans         &trans       &trans             &trans    &trans      &trans      &trans  &trans                                                                                                                     &interface_shift LS(INTERNATIONAL_3)
+&kp LS(LG(S))  &kp LC(TAB)  &screen_switching  &mkp MB5  &bkt_macro                      &interface_shift LS(NUMBER_7)      &interface_shift LS(SEMICOLON)  &interface_shift LS(SQT)  &kp EQUAL                      &kp LEFT_BRACKET
+&mo 4          &mkp MB2     &mkp MB3           &mkp MB1  &par_macro                      &interface_shift LS(NUMBER_2)      &kp SEMICOLON                   &kp SQT                   &interface_shift LS(NUMBER_1)  &layer_interface_shift 4 LS(EQUAL)
+&trans         &trans       &trans             &mkp MB4  &brc_macro                      &interface_shift LS(LEFT_BRACKET)  &interface_shift LS(NUMBER_3)   &interface_shift LS(N5)   &interface_shift LS(NUMBER_4)  &interface_shift LS(NUMBER_6)
+&trans         &trans       &trans             &trans    &trans      &trans      &trans  &trans                                                                                                                      &interface_shift LS(INTERNATIONAL_3)
             >;
         };
 
