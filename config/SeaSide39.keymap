@@ -23,13 +23,13 @@
         compatible = "zmk,combos";
 
         lang1 {
-            bindings = <&kp LANGUAGE_2>;
+            bindings = <&kp INT_MUHENKAN>;
             key-positions = <13 12>;
             layers = <0>;
         };
 
         lang2 {
-            bindings = <&kp LANGUAGE_1>;
+            bindings = <&kp INT_HENKAN>;
             key-positions = <17 16>;
             layers = <0>;
         };
