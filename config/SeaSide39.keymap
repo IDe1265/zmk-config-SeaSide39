@@ -24,15 +24,47 @@
     combos {
         compatible = "zmk,combos";
 
-        lang1 {
+        combo_lang1 {
             bindings = <&kp INTERNATIONAL_5>;
             key-positions = <13 12>;
-            layers = <0>;
+            layers = <0 1>;
         };
 
-        lang2 {
+        combo_lang2 {
             bindings = <&kp INTERNATIONAL_4>;
             key-positions = <16 17>;
+            layers = <0 1>;
+        };
+
+        combo_square_bracket_left {
+            bindings = <&kp RIGHT_BRACKET>;
+            key-positions = <2 1>;
+            layers = <0 1>;
+        };
+
+        combo_square_bracket_right {
+            bindings = <&kp NUHS>;
+            key-positions = <7 8>;
+        };
+
+        combo_parenthess_left {
+            bindings = <&Interface_shift N8>;
+            key-positions = <12 11>;
+        };
+
+        combo_parenthess_right {
+            bindings = <&Interface_shift N9>;
+            key-positions = <17 18>;
+        };
+
+        combo_curly_bracket_left {
+            bindings = <&Interface_shift LS(RIGHT_BRACKET)>;
+            key-positions = <22 21>;
+        };
+
+        combo_curly_bracket_right {
+            bindings = <&Interface_shift LS(NUHS)>;
+            key-positions = <27 28>;
         };
     };
 
@@ -56,6 +88,20 @@
                 <&kp LEFT_SHIFT>;
 
             label = "INTERFACESHIFT";
+        };
+
+        interface_ctrl: interface_ctrl {
+            compatible = "zmk,behavior-macro-one-param";
+            #binding-cells = <1>;
+            bindings =
+                <&macro_press>,
+                <&kp LCTRL>,
+                <&macro_tap>,
+                <&macro_param_1to1 &kp MACRO_PLACEHOLDER>,
+                <&macro_release>,
+                <&kp LCTRL>;
+
+            label = "INTERFACE_CTRL";
         };
     };
 
@@ -85,16 +131,16 @@
 
         df {
             bindings = <
-&kp Q       &kp W         &kp E         &kp R        &kp T                                                              &kp Y        &kp U  &kp I      &kp O    &kp P
-&lt 5 A     &kp S         &kp D         &kp F        &kp G                                                              &kp H        &kp J  &kp K      &kp L    &lt 5 MINUS
-&kp Z       &kp X         &kp C         &kp V        &kp B                                                              &kp N        &kp M  &kp COMMA  &kp DOT  &kp SLASH
-&kp ESCAPE  &kp LEFT_WIN  &kp LEFT_ALT  &lt 2 SPACE  &mt LEFT_SHIFT TAB  &mt LCTRL GRAVE      &mt LEFT_SHIFT BACKSPACE  &lt 3 ENTER                             &kp INTERNATIONAL_1
+&kp Q       &kp W         &kp E         &kp R        &kp T                                                                 &kp Y        &kp U  &kp I      &kp O    &kp P
+&lt 5 A     &kp S         &kp D         &kp F        &kp G                                                                 &kp H        &kp J  &kp K      &kp L    &lt 5 MINUS
+&kp Z       &kp X         &kp C         &kp V        &kp B                                                                 &kp N        &kp M  &kp COMMA  &kp DOT  &kp SLASH
+&kp ESCAPE  &kp LEFT_WIN  &kp LEFT_ALT  &lt 2 SPACE  &mt LEFT_SHIFT TAB  &mt LCTRL CAPSLOCK      &mt LEFT_SHIFT BACKSPACE  &lt 3 ENTER                             &kp INTERNATIONAL_1
             >;
 
             sensor-bindings = <&inc_dec_kp PG_UP PAGE_DOWN>;
         };
 
-        ohnishi {
+        overlay_ohnishi {
             bindings = <
 &kp Q    &kp L   &kp U   &kp COMMA  &kp DOT                        &kp F   &kp W  &kp R  &kp Y  &kp P
 &lt 5 E  &kp I   &kp A   &kp O      &kp MINUS                      &kp K   &kp T  &kp N  &kp S  &lt 5 H
@@ -114,10 +160,10 @@
 
         number_arrow {
             bindings = <
-&trans        &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &trans                          &none   &none     &none        &none          &none
-&trans        &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &trans                          &none   &kp LEFT  &kp UP       &kp DOWN       &kp RIGHT
-&kp NUMBER_0  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp PERIOD                      &none   &kp HOME  &kp PAGE_UP  &kp PAGE_DOWN  &kp END
-&trans        &trans        &trans        &trans        &trans      &trans      &trans  &trans                                        &none
+&trans        &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &trans                          &none   &interface_ctrl LEFT  &interface_ctrl UP  &interface_ctrl DOWN  &interface_ctrl RIGHT
+&trans        &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &trans                          &none   &kp LEFT              &kp UP              &kp DOWN              &kp RIGHT
+&kp NUMBER_0  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp PERIOD                      &none   &kp HOME              &kp PAGE_UP         &kp PAGE_DOWN         &kp END
+&trans        &trans        &trans        &trans        &trans      &trans      &trans  &trans                                                                  &none
             >;
         };
 
@@ -125,7 +171,7 @@
             bindings = <
 &kp F9  &kp F10  &kp F11  &kp F12  &none                       &none         &out OUT_USB  &out OUT_BLE  &none         &none
 &kp F5  &kp F6   &kp F7   &kp F8   &none                       &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4
-&kp F1  &kp F2   &kp F3   &kp F4   &none                       &none         &none         &none         &none         &bt BT_CLR
+&kp F1  &kp F2   &kp F3   &kp F4   &none                       &none         &none         &tog 1        &none         &bt BT_CLR
 &trans  &trans   &trans   &trans   &trans  &trans      &trans  &trans                                                  &bt BT_CLR_ALL
             >;
 
