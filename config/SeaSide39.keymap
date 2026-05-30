@@ -27,44 +27,59 @@
         combo_lang1 {
             bindings = <&kp INTERNATIONAL_5>;
             key-positions = <13 12>;
-            layers = <0 1>;
         };
 
         combo_lang2 {
             bindings = <&kp INTERNATIONAL_4>;
             key-positions = <16 17>;
-            layers = <0 1>;
         };
 
         combo_square_bracket_left {
             bindings = <&kp RIGHT_BRACKET>;
-            key-positions = <2 1>;
+            key-positions = <2 3>;
             layers = <0 1>;
         };
 
         combo_square_bracket_right {
             bindings = <&kp NUHS>;
-            key-positions = <7 8>;
+            key-positions = <7 6>;
+            layers = <0 1>;
         };
 
         combo_parenthess_left {
             bindings = <&Interface_shift N8>;
-            key-positions = <12 11>;
+            key-positions = <23 22>;
+            layers = <0 1>;
         };
 
         combo_parenthess_right {
             bindings = <&Interface_shift N9>;
-            key-positions = <17 18>;
+            key-positions = <26 27>;
+            layers = <0 1>;
         };
 
         combo_curly_bracket_left {
             bindings = <&Interface_shift LS(RIGHT_BRACKET)>;
-            key-positions = <22 21>;
+            key-positions = <3 2>;
+            layers = <2>;
         };
 
         combo_curly_bracket_right {
             bindings = <&Interface_shift LS(NUHS)>;
-            key-positions = <27 28>;
+            key-positions = <7 6>;
+            layers = <2>;
+        };
+
+        combo_angle_braket_left {
+            bindings = <&Interface_shift LS(COMMA)>;
+            key-positions = <23 22>;
+            layers = <2>;
+        };
+
+        combo_angle_braket_right {
+            bindings = <&Interface_shift LS(PERIOD)>;
+            key-positions = <27 26>;
+            layers = <2>;
         };
     };
 
@@ -102,6 +117,20 @@
                 <&kp LCTRL>;
 
             label = "INTERFACE_CTRL";
+        };
+
+        macro_altab: macro_altab {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_press>,
+                <&kp LALT &kp LCTRL>,
+                <&macro_tap>,
+                <&kp TAB>,
+                <&macro_release>,
+                <&kp LEFT_ALT &kp LCTRL>;
+
+            label = "MACRO_ALTAB";
         };
     };
 
@@ -142,28 +171,28 @@
 
         overlay_ohnishi {
             bindings = <
-&kp Q    &kp L   &kp U   &kp COMMA  &kp DOT                        &kp F   &kp W  &kp R  &kp Y  &kp P
-&lt 5 E  &kp I   &kp A   &kp O      &kp MINUS                      &kp K   &kp T  &kp N  &kp S  &lt 5 H
-&kp Z    &kp X   &kp C   &kp V      &kp SLASH                      &kp G   &kp D  &kp M  &kp J  &kp B
-&trans   &trans  &trans  &trans     &trans     &trans      &trans  &trans                       &trans
+&kp Q   &kp L   &kp U   &kp COMMA  &kp DOT                        &kp F   &kp W  &kp R  &kp Y  &kp P
+&kp E   &kp I   &kp A   &kp O      &kp MINUS                      &kp K   &kp T  &kp N  &kp S  &lt 5 H
+&kp Z   &kp X   &kp C   &kp V      &kp SLASH                      &kp G   &kp D  &kp M  &kp J  &kp B
+&trans  &trans  &trans  &trans     &trans     &trans      &trans  &trans                       &trans
             >;
         };
 
         mouse_symbol {
             bindings = <
-&trans  &trans    &trans    &mkp MB5  &trans                      &Interface_shift LS(N7)            &Interface_shift LS(SEMICOLON)  &Interface_shift LS(SQT)  &kp EQUAL                      &kp LEFT_BRACKET
-&mo 5   &mkp MB2  &mkp MB3  &mkp MB1  &trans                      &Interface_shift LS(NUMBER_2)      &kp SEMICOLON                   &kp SQT                   &Interface_shift LS(NUMBER_1)  &interface_layer_shift 5 LS(EQUAL)
-&trans  &trans    &trans    &mkp MB4  &trans                      &Interface_shift LS(LEFT_BRACKET)  &Interface_shift LS(NUMBER_3)   &Interface_shift LS(N5)   &Interface_shift LS(NUMBER_4)  &Interface_shift LS(NUMBER_6)
-&trans  &trans    &trans    &trans    &trans  &trans      &trans  &trans                                                                                                                      &Interface_shift LS(INTERNATIONAL_3)
+&Interface_shift LG(LS(S))  &trans        &macro_altab  &mkp MB5  &trans                      &Interface_shift LS(N7)            &Interface_shift LS(SEMICOLON)  &Interface_shift LS(SQT)  &kp EQUAL                      &kp LEFT_BRACKET
+&mo 5                       &mkp MB2      &mkp MB3      &mkp MB1  &trans                      &Interface_shift LS(NUMBER_2)      &kp SEMICOLON                   &kp SQT                   &Interface_shift LS(NUMBER_1)  &interface_layer_shift 5 LS(EQUAL)
+&trans                      &kp LEFT_ALT  &kp TAB       &mkp MB4  &trans                      &Interface_shift LS(LEFT_BRACKET)  &Interface_shift LS(NUMBER_3)   &Interface_shift LS(N5)   &Interface_shift LS(NUMBER_4)  &Interface_shift LS(NUMBER_6)
+&trans                      &trans        &trans        &trans    &trans  &trans      &trans  &trans                                                                                                                      &Interface_shift LS(INTERNATIONAL_3)
             >;
         };
 
         number_arrow {
             bindings = <
-&trans        &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &trans                          &none   &interface_ctrl LEFT  &interface_ctrl UP  &interface_ctrl DOWN  &interface_ctrl RIGHT
-&trans        &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &trans                          &none   &kp LEFT              &kp UP              &kp DOWN              &kp RIGHT
-&kp NUMBER_0  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp PERIOD                      &none   &kp HOME              &kp PAGE_UP         &kp PAGE_DOWN         &kp END
-&trans        &trans        &trans        &trans        &trans      &trans      &trans  &trans                                                                  &none
+&trans        &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &trans                          &none   &interface_ctrl LC(LEFT)  &interface_ctrl LC(UP)  &interface_ctrl LC(DOWN)  &interface_ctrl LC(RIGHT)
+&trans        &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &trans                          &none   &kp LEFT                  &kp UP                  &kp DOWN                  &kp RIGHT
+&kp NUMBER_0  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp PERIOD                      &none   &kp HOME                  &kp PAGE_UP             &kp PAGE_DOWN             &kp END
+&trans        &trans        &trans        &trans        &trans      &trans      &trans  &trans                                                                              &none
             >;
         };
 
@@ -180,10 +209,10 @@
 
         scl {
             bindings = <
-&trans  &trans    &trans    &mkp MB5  &trans                          &trans  &mkp MB5  &trans    &trans    &trans
-&trans  &mkp MB2  &mkp MB3  &mkp MB1  &trans                          &trans  &mkp MB1  &mkp MB3  &mkp MB2  &trans
-&trans  &trans    &trans    &mkp MB4  &trans                          &trans  &mkp MB4  &trans    &trans    &trans
-&trans  &trans    &trans    &trans    &trans  &trans      &kp DELETE  &trans                                &trans
+&trans  &trans    &macro_altab  &mkp MB5  &trans                          &trans  &mkp MB5  &macro_altab  &trans    &trans
+&trans  &mkp MB2  &mkp MB3      &mkp MB1  &trans                          &trans  &mkp MB1  &mkp MB3      &mkp MB2  &trans
+&trans  &trans    &trans        &mkp MB4  &trans                          &trans  &mkp MB4  &trans        &trans    &trans
+&trans  &trans    &trans        &trans    &trans  &trans      &kp DELETE  &trans                                    &trans
             >;
         };
     };
