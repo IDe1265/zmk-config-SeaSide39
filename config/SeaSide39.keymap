@@ -10,12 +10,14 @@
 
 &mt {
     flavor = "balanced";
-    quick-tap-ms = <300>;
+    quick-tap-ms = <165>;
+    tapping-term-ms = <170>;
 };
 
 &lt {
     flavor = "balanced";
-    quick-tap-ms = <300>;
+    quick-tap-ms = <165>;
+    tapping-term-ms = <170>;
 };
 
 / {
@@ -41,6 +43,20 @@
             bindings = <&to 0 &macro_param_1to1 &kp MACRO_PLACEHOLDER>;
             label = "TO_LAYER_0";
         };
+
+        Interface_shift: InterfaceShift {
+            compatible = "zmk,behavior-macro-one-param";
+            #binding-cells = <1>;
+            bindings =
+                <&macro_press>,
+                <&kp LEFT_SHIFT>,
+                <&macro_tap>,
+                <&macro_param_1to1 &kp MACRO_PLACEHOLDER>,
+                <&macro_release>,
+                <&kp LEFT_SHIFT>;
+
+            label = "INTERFACESHIFT";
+        };
     };
 
     behaviors {
@@ -51,6 +67,16 @@
 
             #binding-cells = <2>;
             tapping-term-ms = <200>;
+        };
+
+        interface_layer_shift: interface_layer_shift {
+            compatible = "zmk,behavior-hold-tap";
+            label = "INTERFACE_LAYER_SHIFT";
+            bindings = <&mo>, <&Interface_shift>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <170>;
+            flavor = "balanced";
         };
     };
 
@@ -70,10 +96,10 @@
 
         mouse_symbol {
             bindings = <
-&trans  &trans    &trans    &mkp MB5  &trans                      &kp BSLH        &kp LEFT_BRACE        &kp RIGHT_BRACE        &kp LESS_THAN  &kp GREATER_THAN
-&mo 4   &mkp MB2  &mkp MB3  &mkp MB1  &trans                      &kp UNDERSCORE  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp SEMI       &kp COLON
-&trans  &trans    &trans    &mkp MB4  &trans                      &kp PIPE        &kp LBKT              &kp RBKT               &kp SQT        &kp DOUBLE_QUOTES
-&trans  &trans    &trans    &trans    &trans  &trans      &trans  &trans                                                                      &kp ESC
+&trans  &trans    &trans    &mkp MB5  &trans                      &Interface_shift LS(N7)            &Interface_shift LS(SEMICOLON)  &Interface_shift LS(SQT)  &kp EQUAL                      &kp LEFT_BRACKET
+&mo 4   &mkp MB2  &mkp MB3  &mkp MB1  &trans                      &Interface_shift LS(NUMBER_2)      &kp SEMICOLON                   &kp SQT                   &Interface_shift LS(NUMBER_1)  &interface_layer_shift 4 LS(EQUAL)
+&trans  &trans    &trans    &mkp MB4  &trans                      &Interface_shift LS(LEFT_BRACKET)  &Interface_shift LS(NUMBER_3)   &Interface_shift LS(N5)   &Interface_shift LS(NUMBER_4)  &Interface_shift LS(NUMBER_6)
+&trans  &trans    &trans    &trans    &trans  &trans      &trans  &trans                                                                                                                      &Interface_shift LS(INTERNATIONAL_3)
             >;
         };
 
