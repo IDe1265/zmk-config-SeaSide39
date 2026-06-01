@@ -102,7 +102,7 @@
                 <&macro_release>,
                 <&kp LEFT_SHIFT>;
 
-            label = "INTERFACES_HIFT";
+            label = "INTERFACES_SHIFT";
         };
 
         interface_ctrl: interface_ctrl {
