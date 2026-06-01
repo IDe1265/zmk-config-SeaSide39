@@ -163,6 +163,14 @@
             tapping-term-ms = <170>;
             flavor = "balanced";
         };
+
+        layer_tap_simultaneous: layer_tap_simultaneous {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "hold-preferred";
+            tapping-term-ms = <170>;
+            bindings = <&mo_mouse_scl>, <&kp>;
+        };
     };
 
     keymap {
