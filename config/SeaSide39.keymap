@@ -210,7 +210,7 @@
         mouse {
             bindings = <
 &trans  &trans    &macro_altab  &mkp MB5  &trans                          &trans  &mkp MB5  &macro_altab  &trans    &trans
-&trans  &mkp MB2  &mkp MB3      &mkp MB1  &mo 5                           &mo 5   &mkp MB1  &mkp MB3      &mkp MB2  &trans
+&trans  &mkp MB2  &mkp MB3      &mkp MB1  &trans                          &trans  &mkp MB1  &mkp MB3      &mkp MB2  &trans
 &trans  &trans    &trans        &mkp MB4  &trans                          &trans  &mkp MB4  &trans        &trans    &trans
 &trans  &trans    &trans        &trans    &trans  &trans      &kp DELETE  &trans                                    &trans
             >;
@@ -219,7 +219,7 @@
         scl {
             bindings = <
 &trans  &trans    &macro_altab  &mkp MB5  &trans                          &trans  &mkp MB5  &macro_altab  &trans    &trans
-&trans  &mkp MB2  &mkp MB3      &mkp MB1  &trans                          &trans   &mkp MB1  &mkp MB3      &mkp MB2  &trans
+&trans  &mkp MB2  &mkp MB3      &mkp MB1  &mo 5                           &mo 5   &mkp MB1  &mkp MB3      &mkp MB2  &trans
 &trans  &trans    &trans        &mkp MB4  &trans                          &trans  &mkp MB4  &trans        &trans    &trans
 &trans  &trans    &trans        &trans    &trans  &trans      &kp DELETE  &trans                                    &trans
             >;
