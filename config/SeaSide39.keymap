@@ -47,37 +47,37 @@
         };
 
         combo_parenthess_left {
-            bindings = <&Interface_shift N8>;
+            bindings = <&interface_shift N8>;
             key-positions = <23 22>;
             layers = <0 1>;
         };
 
         combo_parenthess_right {
-            bindings = <&Interface_shift N9>;
+            bindings = <&interface_shift N9>;
             key-positions = <26 27>;
             layers = <0 1>;
         };
 
         combo_curly_bracket_left {
-            bindings = <&Interface_shift LS(RIGHT_BRACKET)>;
+            bindings = <&interface_shift LS(RIGHT_BRACKET)>;
             key-positions = <3 2>;
             layers = <2>;
         };
 
         combo_curly_bracket_right {
-            bindings = <&Interface_shift LS(NUHS)>;
+            bindings = <&interface_shift LS(NUHS)>;
             key-positions = <7 6>;
             layers = <2>;
         };
 
         combo_angle_braket_left {
-            bindings = <&Interface_shift LS(COMMA)>;
+            bindings = <&interface_shift LS(COMMA)>;
             key-positions = <23 22>;
             layers = <2>;
         };
 
         combo_angle_braket_right {
-            bindings = <&Interface_shift LS(PERIOD)>;
+            bindings = <&interface_shift LS(PERIOD)>;
             key-positions = <27 26>;
             layers = <2>;
         };
@@ -91,7 +91,7 @@
             label = "TO_LAYER_0";
         };
 
-        Interface_shift: InterfaceShift {
+        interface_shift: interface_shift {
             compatible = "zmk,behavior-macro-one-param";
             #binding-cells = <1>;
             bindings =
@@ -102,7 +102,7 @@
                 <&macro_release>,
                 <&kp LEFT_SHIFT>;
 
-            label = "INTERFACESHIFT";
+            label = "INTERFACES_HIFT";
         };
 
         interface_ctrl: interface_ctrl {
@@ -133,7 +133,7 @@
             label = "MACRO_ALTAB";
         };
 
-        mo_mouse_scl: mo_mouse_scl {
+        macro_toggle_scroll: macro_toggle_scroll {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings =
@@ -158,19 +158,28 @@
         interface_layer_shift: interface_layer_shift {
             compatible = "zmk,behavior-hold-tap";
             label = "INTERFACE_LAYER_SHIFT";
-            bindings = <&mo>, <&Interface_shift>;
+            bindings = <&mo>, <&interface_shift>;
 
             #binding-cells = <2>;
             tapping-term-ms = <170>;
             flavor = "balanced";
         };
 
-        layer_tap_simultaneous: layer_tap_simultaneous {
+        interface_toggle_scroll: interface_toggle_scroll {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = "hold-preferred";
             tapping-term-ms = <170>;
-            bindings = <&mo_mouse_scl>, <&kp>;
+            bindings = <&macro_toggle_scroll>, <&kp>;
+        };
+
+        interface_shift_toggle_scroll: interface_shift_toggle_scroll {
+            compatible = "zmk,behavior-hold-tap";
+            label = "LAYER_TAP_SIMULTANEOUS_SHIFT";
+            #binding-cells = <2>;
+            flavor = "balanced";
+            tapping-term-ms = <170>;
+            bindings = <&macro_toggle_scroll>, <&interface_shift>;
         };
     };
 
@@ -180,7 +189,7 @@
         default {
             bindings = <
 &kp Q       &kp W         &kp E         &kp R        &kp T                                                                 &kp Y        &kp U  &kp I      &kp O    &kp P
-&kp A       &kp S         &kp D         &kp F        &kp G                                                                 &kp H        &kp J  &kp K      &kp L    &layer_tap_simultaneous 0 MINUS
+&kp A       &kp S         &kp D         &kp F        &kp G                                                                 &kp H        &kp J  &kp K      &kp L    &interface_toggle_scroll 0 MINUS
 &kp Z       &kp X         &kp C         &kp V        &kp B                                                                 &kp N        &kp M  &kp COMMA  &kp DOT  &kp SLASH
 &kp ESCAPE  &kp LEFT_WIN  &kp LEFT_ALT  &lt 2 SPACE  &mt LEFT_SHIFT TAB  &mt LCTRL CAPSLOCK      &mt LEFT_SHIFT BACKSPACE  &lt 3 ENTER                             &kp INTERNATIONAL_1
             >;
@@ -191,7 +200,7 @@
         overlay_ohnishi {
             bindings = <
 &kp Q   &kp L   &kp U   &kp COMMA  &kp DOT                        &kp F   &kp W  &kp R  &kp Y  &kp P
-&kp E   &kp I   &kp A   &kp O      &kp MINUS                      &kp K   &kp T  &kp N  &kp S  &layer_tap_simultaneous 0 H
+&kp E   &kp I   &kp A   &kp O      &kp MINUS                      &kp K   &kp T  &kp N  &kp S  &interface_toggle_scroll 0 H
 &kp Z   &kp X   &kp C   &kp V      &kp SLASH                      &kp G   &kp D  &kp M  &kp J  &kp B
 &trans  &trans  &trans  &trans     &trans     &trans      &trans  &trans                       &trans
             >;
@@ -199,10 +208,10 @@
 
         mouse_symbol {
             bindings = <
-&Interface_shift LG(LS(S))  &trans        &macro_altab  &mkp MB5  &kp C_VOLUME_UP                        &Interface_shift LS(N7)            &Interface_shift LS(SEMICOLON)  &Interface_shift LS(SQT)  &kp EQUAL                      &kp LEFT_BRACKET
-&mo_mouse_scl               &mkp MB2      &mkp MB3      &mkp MB1  &kp C_MUTE                             &Interface_shift LS(NUMBER_2)      &kp SEMICOLON                   &kp SQT                   &Interface_shift LS(NUMBER_1)  &layer_tap_simultaneous 0 LS(EQUAL)
-&trans                      &kp LEFT_ALT  &kp TAB       &mkp MB4  &kp C_VOLUME_DOWN                      &Interface_shift LS(LEFT_BRACKET)  &Interface_shift LS(NUMBER_3)   &Interface_shift LS(N5)   &Interface_shift LS(NUMBER_4)  &Interface_shift LS(NUMBER_6)
-&trans                      &trans        &trans        &trans    &trans             &trans      &trans  &trans                                                                                                                      &Interface_shift LS(INTERNATIONAL_3)
+&interface_shift LG(LS(S))  &trans        &macro_altab  &mkp MB5  &kp C_VOLUME_UP                        &interface_shift LS(N7)            &interface_shift LS(SEMICOLON)  &interface_shift LS(SQT)  &kp EQUAL                      &kp LEFT_BRACKET
+&macro_toggle_scroll               &mkp MB2      &mkp MB3      &mkp MB1  &kp C_MUTE                             &interface_shift LS(NUMBER_2)      &kp SEMICOLON                   &kp SQT                   &interface_shift LS(NUMBER_1)  &interface_toggle_scroll 0 LS(EQUAL)
+&trans                      &kp LEFT_ALT  &kp TAB       &mkp MB4  &kp C_VOLUME_DOWN                      &interface_shift LS(LEFT_BRACKET)  &interface_shift LS(NUMBER_3)   &interface_shift LS(N5)   &interface_shift LS(NUMBER_4)  &interface_shift LS(NUMBER_6)
+&trans                      &trans        &trans        &trans    &trans             &trans      &trans  &trans                                                                                                                      &interface_shift LS(INTERNATIONAL_3)
             >;
         };
 
