@@ -209,7 +209,7 @@
         mouse_symbol {
             bindings = <
 &interface_shift LG(LS(S))  &trans        &macro_altab  &mkp MB5  &kp C_VOLUME_UP                        &interface_shift LS(N7)            &interface_shift LS(SEMICOLON)  &interface_shift LS(SQT)  &kp EQUAL                      &kp LEFT_BRACKET
-&macro_toggle_scroll               &mkp MB2      &mkp MB3      &mkp MB1  &kp C_MUTE                             &interface_shift LS(NUMBER_2)      &kp SEMICOLON                   &kp SQT                   &interface_shift LS(NUMBER_1)  &interface_toggle_scroll 0 LS(EQUAL)
+&macro_toggle_scroll        &mkp MB2      &mkp MB3      &mkp MB1  &kp C_MUTE                             &interface_shift LS(NUMBER_2)      &kp SEMICOLON                   &kp SQT                   &interface_shift LS(NUMBER_1)  &interface_shift_toggle_scroll 0 LS(EQUAL)
 &trans                      &kp LEFT_ALT  &kp TAB       &mkp MB4  &kp C_VOLUME_DOWN                      &interface_shift LS(LEFT_BRACKET)  &interface_shift LS(NUMBER_3)   &interface_shift LS(N5)   &interface_shift LS(NUMBER_4)  &interface_shift LS(NUMBER_6)
 &trans                      &trans        &trans        &trans    &trans             &trans      &trans  &trans                                                                                                                      &interface_shift LS(INTERNATIONAL_3)
             >;
