@@ -161,7 +161,7 @@
         default {
             bindings = <
 &kp Q       &kp W         &kp E         &kp R        &kp T                                                              &kp Y        &kp U  &kp I      &kp O    &kp P
-&kp A       &kp S         &kp D         &kp F        &kp G                                                              &kp H        &kp J  &kp K      &kp L    &lt 5 MINUS
+&kp A       &kp S         &kp D         &kp F        &kp G                                                              &kp H        &kp J  &kp K      &kp L    &lt 6 MINUS
 &kp Z       &kp X         &kp C         &kp V        &kp B                                                              &kp N        &kp M  &kp COMMA  &kp DOT  &kp SLASH
 &kp ESCAPE  &kp LEFT_WIN  &kp LEFT_ALT  &lt 2 SPACE  &mt LEFT_SHIFT TAB  &mt LCTRL GRAVE      &mt LEFT_SHIFT BACKSPACE  &lt 3 ENTER                             &kp INTERNATIONAL_1
             >;
@@ -172,7 +172,7 @@
         overlay_ohnishi {
             bindings = <
 &kp Q   &kp L   &kp U   &kp COMMA  &kp DOT                        &kp F   &kp W  &kp R  &kp Y  &kp P
-&kp E   &kp I   &kp A   &kp O      &kp MINUS                      &kp K   &kp T  &kp N  &kp S  &lt 5 H
+&kp E   &kp I   &kp A   &kp O      &kp MINUS                      &kp K   &kp T  &kp N  &kp S  &lt 6 H
 &kp Z   &kp X   &kp C   &kp V      &kp SLASH                      &kp G   &kp D  &kp M  &kp J  &kp B
 &trans  &trans  &trans  &trans     &trans     &trans      &trans  &trans                       &trans
             >;
@@ -181,7 +181,7 @@
         mouse_symbol {
             bindings = <
 &Interface_shift LG(LS(S))  &trans        &macro_altab  &mkp MB5  &kp C_VOLUME_UP                        &Interface_shift LS(N7)            &Interface_shift LS(SEMICOLON)  &Interface_shift LS(SQT)  &kp EQUAL                      &kp LEFT_BRACKET
-&mo 5                       &mkp MB2      &mkp MB3      &mkp MB1  &kp C_MUTE                             &Interface_shift LS(NUMBER_2)      &kp SEMICOLON                   &kp SQT                   &Interface_shift LS(NUMBER_1)  &interface_layer_shift 5 LS(EQUAL)
+&mo 6                       &mkp MB2      &mkp MB3      &mkp MB1  &kp C_MUTE                             &Interface_shift LS(NUMBER_2)      &kp SEMICOLON                   &kp SQT                   &Interface_shift LS(NUMBER_1)  &interface_layer_shift 6 LS(EQUAL)
 &trans                      &kp LEFT_ALT  &kp TAB       &mkp MB4  &kp C_VOLUME_DOWN                      &Interface_shift LS(LEFT_BRACKET)  &Interface_shift LS(NUMBER_3)   &Interface_shift LS(N5)   &Interface_shift LS(NUMBER_4)  &Interface_shift LS(NUMBER_6)
 &trans                      &trans        &trans        &trans    &trans             &trans      &trans  &trans                                                                                                                      &Interface_shift LS(INTERNATIONAL_3)
             >;
@@ -207,19 +207,19 @@
             sensor-bindings = <&inc_dec_kp LC(PAGE_UP) LC(PAGE_DOWN)>;
         };
 
-        scl {
+        mouse {
             bindings = <
 &trans  &trans    &macro_altab  &mkp MB5  &trans                          &trans  &mkp MB5  &macro_altab  &trans    &trans
-&trans  &mkp MB2  &mkp MB3      &mkp MB1  &to 6                           &to 6   &mkp MB1  &mkp MB3      &mkp MB2  &trans
+&trans  &mkp MB2  &mkp MB3      &mkp MB1  &mo 5                           &mo 5   &mkp MB1  &mkp MB3      &mkp MB2  &trans
 &trans  &trans    &trans        &mkp MB4  &trans                          &trans  &mkp MB4  &trans        &trans    &trans
 &trans  &trans    &trans        &trans    &trans  &trans      &kp DELETE  &trans                                    &trans
             >;
         };
 
-        mouse {
+        scl {
             bindings = <
 &trans  &trans    &macro_altab  &mkp MB5  &trans                          &trans  &mkp MB5  &macro_altab  &trans    &trans
-&trans  &mkp MB2  &mkp MB3      &mkp MB1  &to 5                           &to 5   &mkp MB1  &mkp MB3      &mkp MB2  &trans
+&trans  &mkp MB2  &mkp MB3      &mkp MB1  &trans                          &trans   &mkp MB1  &mkp MB3      &mkp MB2  &trans
 &trans  &trans    &trans        &mkp MB4  &trans                          &trans  &mkp MB4  &trans        &trans    &trans
 &trans  &trans    &trans        &trans    &trans  &trans      &kp DELETE  &trans                                    &trans
             >;
