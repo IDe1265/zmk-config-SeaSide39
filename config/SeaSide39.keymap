@@ -134,13 +134,14 @@
         };
 
         mo_mouse_scl: mo_mouse_scl {
-            compatible = "zmk,behavior-macro-one-param";
-            #binding-cells = <1>;
-            bindings
-                = <&macro_press &mo 5 &mo 6>
-                , <&macro_pause_for_release>
-                , <&macro_release &mo 5 &mo 6>
-                ;
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_press>,
+                <&mo 5 &mo 6>,
+                <&macro_pause_for_release>,
+                <&macro_release>,
+                <&mo 5 &mo 6>;
         };
     };
 
@@ -179,7 +180,7 @@
         default {
             bindings = <
 &kp Q       &kp W         &kp E         &kp R        &kp T                                                                 &kp Y        &kp U  &kp I      &kp O    &kp P
-&kp A       &kp S         &kp D         &kp F        &kp G                                                                 &kp H        &kp J  &kp K      &kp L    &lt 6 MINUS
+&kp A       &kp S         &kp D         &kp F        &kp G                                                                 &kp H        &kp J  &kp K      &kp L    &layer_tap_simultaneous 0 MINUS
 &kp Z       &kp X         &kp C         &kp V        &kp B                                                                 &kp N        &kp M  &kp COMMA  &kp DOT  &kp SLASH
 &kp ESCAPE  &kp LEFT_WIN  &kp LEFT_ALT  &lt 2 SPACE  &mt LEFT_SHIFT TAB  &mt LCTRL CAPSLOCK      &mt LEFT_SHIFT BACKSPACE  &lt 3 ENTER                             &kp INTERNATIONAL_1
             >;
@@ -190,7 +191,7 @@
         overlay_ohnishi {
             bindings = <
 &kp Q   &kp L   &kp U   &kp COMMA  &kp DOT                        &kp F   &kp W  &kp R  &kp Y  &kp P
-&kp E   &kp I   &kp A   &kp O      &kp MINUS                      &kp K   &kp T  &kp N  &kp S  &lt 6 H
+&kp E   &kp I   &kp A   &kp O      &kp MINUS                      &kp K   &kp T  &kp N  &kp S  &layer_tap_simultaneous 0 H
 &kp Z   &kp X   &kp C   &kp V      &kp SLASH                      &kp G   &kp D  &kp M  &kp J  &kp B
 &trans  &trans  &trans  &trans     &trans     &trans      &trans  &trans                       &trans
             >;
@@ -199,7 +200,7 @@
         mouse_symbol {
             bindings = <
 &Interface_shift LG(LS(S))  &trans        &macro_altab  &mkp MB5  &kp C_VOLUME_UP                        &Interface_shift LS(N7)            &Interface_shift LS(SEMICOLON)  &Interface_shift LS(SQT)  &kp EQUAL                      &kp LEFT_BRACKET
-&mo 6                       &mkp MB2      &mkp MB3      &mkp MB1  &kp C_MUTE                             &Interface_shift LS(NUMBER_2)      &kp SEMICOLON                   &kp SQT                   &Interface_shift LS(NUMBER_1)  &interface_layer_shift 6 LS(EQUAL)
+&mo_mouse_scl               &mkp MB2      &mkp MB3      &mkp MB1  &kp C_MUTE                             &Interface_shift LS(NUMBER_2)      &kp SEMICOLON                   &kp SQT                   &Interface_shift LS(NUMBER_1)  &layer_tap_simultaneous 0 LS(EQUAL)
 &trans                      &kp LEFT_ALT  &kp TAB       &mkp MB4  &kp C_VOLUME_DOWN                      &Interface_shift LS(LEFT_BRACKET)  &Interface_shift LS(NUMBER_3)   &Interface_shift LS(N5)   &Interface_shift LS(NUMBER_4)  &Interface_shift LS(NUMBER_6)
 &trans                      &trans        &trans        &trans    &trans             &trans      &trans  &trans                                                                                                                      &Interface_shift LS(INTERNATIONAL_3)
             >;
