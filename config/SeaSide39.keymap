@@ -59,25 +59,25 @@
         };
 
         combo_curly_bracket_left {
-            bindings = <&interface_shift LS(RIGHT_BRACKET)>;
+            bindings = <&interface_shift RIGHT_BRACKET>;
             key-positions = <3 2>;
             layers = <2>;
         };
 
         combo_curly_bracket_right {
-            bindings = <&interface_shift LS(NUHS)>;
+            bindings = <&interface_shift NUHS>;
             key-positions = <7 6>;
             layers = <2>;
         };
 
         combo_angle_braket_left {
-            bindings = <&interface_shift LS(COMMA)>;
+            bindings = <&interface_shift COMMA>;
             key-positions = <23 22>;
             layers = <2>;
         };
 
         combo_angle_braket_right {
-            bindings = <&interface_shift LS(PERIOD)>;
+            bindings = <&interface_shift PERIOD>;
             key-positions = <27 26>;
             layers = <2>;
         };
@@ -124,7 +124,7 @@
             #binding-cells = <0>;
             bindings =
                 <&macro_press>,
-                <&kp LALT &kp LCTRL>,
+                <&kp LEFT_ALT &kp LCTRL>,
                 <&macro_tap>,
                 <&kp TAB>,
                 <&macro_release>,
@@ -208,19 +208,19 @@
 
         mouse_symbol {
             bindings = <
-&interface_shift LG(LS(S))  &trans        &macro_altab  &mkp MB5  &kp C_VOLUME_UP                        &interface_shift LS(N7)            &interface_shift LS(SEMICOLON)  &interface_shift LS(SQT)  &kp EQUAL                      &kp LEFT_BRACKET
-&macro_toggle_scroll        &mkp MB2      &mkp MB3      &mkp MB1  &kp C_MUTE                             &interface_shift LS(NUMBER_2)      &kp SEMICOLON                   &kp SQT                   &interface_shift LS(NUMBER_1)  &interface_shift_toggle_scroll 0 LS(EQUAL)
-&trans                      &kp LEFT_ALT  &kp TAB       &mkp MB4  &kp C_VOLUME_DOWN                      &interface_shift LS(LEFT_BRACKET)  &interface_shift LS(NUMBER_3)   &interface_shift LS(N5)   &interface_shift LS(NUMBER_4)  &interface_shift LS(NUMBER_6)
-&trans                      &trans        &trans        &trans    &trans             &trans      &trans  &trans                                                                                                                      &interface_shift LS(INTERNATIONAL_3)
+&interface_shift LG(LS(S))  &trans        &macro_altab  &mkp MB5  &kp C_VOLUME_UP                        &interface_shift N7            &interface_shift SEMICOLON  &interface_shift SQT  &kp EQUAL                  &kp LEFT_BRACKET
+&macro_toggle_scroll        &mkp MB2      &mkp MB3      &mkp MB1  &kp C_MUTE                             &interface_shift NUMBER_2      &kp SEMICOLON               &kp SQT               &interface_shift NUMBER_1  &interface_shift_toggle_scroll 0 EQUAL
+&trans                      &kp LEFT_ALT  &kp TAB       &mkp MB4  &kp C_VOLUME_DOWN                      &interface_shift LEFT_BRACKET  &interface_shift NUMBER_3   &interface_shift N5   &interface_shift NUMBER_4  &interface_shift NUMBER_6
+&trans                      &trans        &trans        &trans    &trans             &trans      &trans  &trans                                                                                                      &interface_shift INTERNATIONAL_3
             >;
         };
 
         number_arrow {
             bindings = <
-&trans        &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &trans                          &none   &interface_ctrl LC(LEFT)  &interface_ctrl LC(UP)  &interface_ctrl LC(DOWN)  &interface_ctrl LC(RIGHT)
-&trans        &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &trans                          &none   &kp LEFT                  &kp UP                  &kp DOWN                  &kp RIGHT
-&kp NUMBER_0  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp PERIOD                      &none   &kp HOME                  &kp PAGE_UP             &kp PAGE_DOWN             &kp END
-&trans        &trans        &trans        &trans        &trans      &trans      &trans  &trans                                                                              &none
+&trans        &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &trans                          &none   &interface_ctrl LEFT  &interface_ctrl UP  &interface_ctrl DOWN  &interface_ctrl RIGHT
+&trans        &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &trans                          &none   &kp LEFT              &kp UP              &kp DOWN              &kp RIGHT
+&kp NUMBER_0  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp PERIOD                      &none   &kp HOME              &kp PAGE_UP         &kp PAGE_DOWN         &kp END
+&trans        &trans        &trans        &trans        &trans      &trans      &trans  &trans                                                                  &none
             >;
         };
 
