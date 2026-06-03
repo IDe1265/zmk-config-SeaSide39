@@ -171,6 +171,34 @@
 
             label = "MACRO_WIN_ALT_K";
         };
+
+        interface_ctrl_win: interface_ctrl_win {
+            compatible = "zmk,behavior-macro-one-param";
+            #binding-cells = <1>;
+            bindings =
+                <&macro_press>,
+                <&kp LCTRL &kp LEFT_WIN>,
+                <&macro_tap>,
+                <&macro_param_1to1 &kp MACRO_PLACEHOLDER>,
+                <&macro_release>,
+                <&kp LCTRL &kp LEFT_WIN>;
+
+            label = "INTERFACE_CTRL_WIN";
+        };
+
+        interface_win: interface_win {
+            compatible = "zmk,behavior-macro-one-param";
+            #binding-cells = <1>;
+            bindings =
+                <&macro_press>,
+                <&kp LEFT_WIN>,
+                <&macro_tap>,
+                <&macro_param_1to1 &kp MACRO_PLACEHOLDER>,
+                <&macro_release>,
+                <&kp LEFT_WIN>;
+
+            label = "INTERFACE_WIN";
+        };
     };
 
     behaviors {
@@ -245,10 +273,10 @@
 
         number_arrow {
             bindings = <
-&trans     &kp KP_N7  &kp KP_N8  &kp KP_N9  &trans                          &none                 &interface_ctrl LEFT  &interface_ctrl UP  &interface_ctrl DOWN  &interface_ctrl RIGHT
-&trans     &kp KP_N4  &kp KP_N5  &kp KP_N6  &trans                          &macro_win_alt_k      &kp LEFT              &kp UP              &kp DOWN              &kp RIGHT
-&kp KP_N0  &kp KP_N1  &kp KP_N2  &kp KP_N3  &kp PERIOD                      &macro_ctrl_alt_home  &kp HOME              &kp PAGE_UP         &kp PAGE_DOWN         &kp END
-&trans     &trans     &trans     &trans     &trans      &trans      &trans  &trans                                                                                &none
+&interface_win TAB  &kp KP_N7  &kp KP_N8  &kp KP_N9  &interface_ctrl_win RIGHT                      &kp KP_NUMLOCK        &interface_ctrl LEFT  &interface_ctrl UP  &interface_ctrl DOWN  &interface_ctrl RIGHT
+&interface_win D    &kp KP_N4  &kp KP_N5  &kp KP_N6  &interface_ctrl_win LEFT                       &macro_win_alt_k      &kp LEFT              &kp UP              &kp DOWN              &kp RIGHT
+&kp KP_N0           &kp KP_N1  &kp KP_N2  &kp KP_N3  &kp PERIOD                                     &macro_ctrl_alt_home  &kp HOME              &kp PAGE_UP         &kp PAGE_DOWN         &kp END
+&trans              &trans     &trans     &trans     &trans                     &trans      &trans  &trans                                                                                &none
             >;
         };
 
