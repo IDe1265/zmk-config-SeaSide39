@@ -27,13 +27,13 @@
         combo_lang1 {
             bindings = <&kp INTERNATIONAL_5>;
             key-positions = <13 12>;
-            layers = <0>;
+            layers = <0 1>;
         };
 
         combo_lang2 {
             bindings = <&kp INTERNATIONAL_4>;
             key-positions = <16 17>;
-            layers = <0>;
+            layers = <0 1>;
         };
 
         combo_square_bracket_left {
