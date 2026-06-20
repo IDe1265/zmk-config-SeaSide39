@@ -27,11 +27,13 @@
         combo_lang1 {
             bindings = <&kp INTERNATIONAL_5>;
             key-positions = <13 12>;
+            layers = <0>;
         };
 
         combo_lang2 {
             bindings = <&kp INTERNATIONAL_4>;
             key-positions = <16 17>;
+            layers = <0>;
         };
 
         combo_square_bracket_left {
@@ -300,7 +302,7 @@
             >;
         };
 
-        scl {
+        scroll {
             bindings = <
 &trans  &trans    &macro_altab  &mkp MB5  &trans                          &trans  &mkp MB5  &macro_altab  &trans    &trans
 &trans  &mkp MB2  &mkp MB3      &mkp MB1  &tog 6                          &tog 6  &mkp MB1  &mkp MB3      &mkp MB2  &trans
